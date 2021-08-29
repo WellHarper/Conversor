@@ -1,0 +1,20 @@
+.inputSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputArea {
+    display: flex;
+    flex-direction: column;
+}
+
+.radioSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.radioArea {
+    margin: 20px;
+}
