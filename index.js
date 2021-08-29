@@ -18,7 +18,10 @@ function codificador(mensagem, element){
 function retornaOpcao(option) {
     
     var i = 0
-    
+
+    console.log(option)
+
+
 
     while(i <= option.length) {
 
@@ -31,6 +34,8 @@ function retornaOpcao(option) {
 
     }
   
+
+
 }
 
 
@@ -52,7 +57,7 @@ function pegaTexto(text, element, option) {
 
         
 
-
+        
 
 
     })
