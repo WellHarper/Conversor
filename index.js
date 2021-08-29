@@ -7,7 +7,7 @@ var radio = Array.from(document.getElementsByName('tipo'))
 function retornaOpcao(option) {
     
     var i = 0
-    var value = ''
+    
 
     while(i <= option.length) {
 
