@@ -3,6 +3,29 @@ var input = document.getElementById('inputText')
 var output = document.getElementById('outputText')
 var radio = Array.from(document.getElementsByName('tipo'))
 
+
+
+function cifrado(){
+    var mensagemArr = mensagem.split('')
+    var mensagemCifrada = []
+    var codificadorArr = []
+    
+    for (var i = 0; mensagemArr.length > i; i++){
+        if (mensagemArr[i] !== ' '){
+            codificadorArr.push((mensagemArr[i].charCodeAt()) + incremento)
+        }else{
+            codificadorArr.push(mensagemArr[i].charCodeAt())
+        }
+    }
+    for (var j = 0; codificadorArr.length > j; j++){
+        mensagemCifrada.push(String.fromCharCode(codificadorArr[j]))
+    }
+    return mensagemCifrada.join('')
+
+}
+
+
+
 //Criando funções de pegar dados
 function retornaOpcao(option) {
     
@@ -22,21 +45,17 @@ function retornaOpcao(option) {
   
 }
 
-function retornaTexto (text, element, option) {
-    console.log(option)
-    var typeOption = retornaOpcao(option)
-    var returnText = element.value = text
-    return console.log(returnText + " " + typeOption)
-}
 
 function pegaTexto(text, element, option) {
 
 
-    button.addEventListener('click', ()=> {
+    button.addEventListener('click', () => {
 
-        console.log(option)
+        
 
-        retornaTexto(text.value, element, option)
+        var typeOption = retornaOpcao(option)
+        var returnText = element.value = text.value
+        return console.log(returnText + " " + typeOption)
 
 
 
