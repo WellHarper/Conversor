@@ -3,7 +3,7 @@ var input = document.getElementById('inputText')
 var output = document.getElementById('outputText')
 var radio = Array.from(document.getElementsByName('tipo'))
 
-
+//Criando funções de pegar dados
 function retornaOpcao(option) {
     
     var i = 0
