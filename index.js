@@ -4,23 +4,11 @@ var output = document.getElementById('outputText')
 var radio = Array.from(document.getElementsByName('tipo'))
 
 
-
-function cifrado(){
-    var mensagemArr = mensagem.split('')
-    var mensagemCifrada = []
-    var codificadorArr = []
+// Base64
+function codificador(mensagem, element){
+    var mensagemCodificada = btoa(mensagem)
     
-    for (var i = 0; mensagemArr.length > i; i++){
-        if (mensagemArr[i] !== ' '){
-            codificadorArr.push((mensagemArr[i].charCodeAt()) + incremento)
-        }else{
-            codificadorArr.push(mensagemArr[i].charCodeAt())
-        }
-    }
-    for (var j = 0; codificadorArr.length > j; j++){
-        mensagemCifrada.push(String.fromCharCode(codificadorArr[j]))
-    }
-    return mensagemCifrada.join('')
+    return element.value = mensagemCodificada
 
 }
 
@@ -52,10 +40,17 @@ function pegaTexto(text, element, option) {
     button.addEventListener('click', () => {
 
         
-
+        var returnText = text.value
         var typeOption = retornaOpcao(option)
-        var returnText = element.value = text.value
-        return console.log(returnText + " " + typeOption)
+        // var returnText = element.value = text.value
+            if(typeOption == 'Cifra de Otavio') {
+                 codificador(returnText, element)
+            }
+            else {
+                return console.log(returnText + '' + typeOption)
+            }
+
+        
 
 
 
