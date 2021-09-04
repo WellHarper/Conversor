@@ -2,6 +2,7 @@ var button = document.getElementById('cript')
 var input = document.getElementById('inputText')
 var output = document.getElementById('outputText')
 var radio = Array.from(document.getElementsByName('tipo'))
+var base = document.getElementById('base')
 
 
 // Base64
@@ -39,12 +40,13 @@ function retornaOpcao(option) {
 }
 
 
-function pegaTexto(text, element, option) {
+function pegaTexto(text, element, option, base) {
 
 
     button.addEventListener('click', () => {
 
-        
+        var returnBase = base.value
+        console.log(returnBase)
         var returnText = text.value
         var typeOption = retornaOpcao(option)
         // var returnText = element.value = text.value
@@ -65,4 +67,4 @@ function pegaTexto(text, element, option) {
 
 
 
-pegaTexto(input, output, radio)
+pegaTexto(input, output, radio, base)
