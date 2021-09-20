@@ -14,6 +14,44 @@ function codificador(mensagem, element){
 }
 
 
+//Cifra de César Léo
+function cifrador(mensagem, base, element) {
+    let mensagemArr = mensagem.split('')
+    let incremento = Number(base)
+    console.log(incremento)
+    let mensagemCifrada = []
+    let codificadorArr = []
+
+
+    for (let i = 0; mensagemArr.length > i; i++) {
+        if (mensagemArr[i].charCodeAt() >= 65 && mensagemArr[i].charCodeAt() <= 90) {
+            console.log(mensagemArr[i].charCodeAt() - 65)
+            let teste = ((mensagemArr[i].charCodeAt()) - 65 + incremento) % 26
+                
+            codificadorArr.push(teste + 65)
+        } else if (mensagemArr[i].charCodeAt() >= 97 && mensagemArr[i].charCodeAt() <= 122) {
+            console.log(mensagemArr[i].charCodeAt() - 97)
+            let teste = ((mensagemArr[i].charCodeAt()) - 97 + incremento) % 26
+            
+            codificadorArr.push(teste + 97)
+        } else {
+            codificadorArr.push(mensagemArr[i].charCodeAt())
+        }
+    }
+    for (let j = 0; codificadorArr.length > j; j++) {
+        
+        mensagemCifrada.push(String.fromCharCode(codificadorArr[j]))
+        // console.log(mensagemCifrada)
+    }
+    // console.log(mensagemCifrada.join(''))
+    return element.value = mensagemCifrada.join('')
+
+}
+
+
+
+
+
 
 //Criando funções de pegar dados
 function retornaOpcao(option) {
@@ -46,7 +84,11 @@ function pegaTexto(text, element, option, base) {
     button.addEventListener('click', () => {
 
         var returnBase = base.value
-        console.log(returnBase)
+        if(returnBase === '' && typeOption === 'Cifra de César' ) {
+            alert('Por Favor, digite um número de base válida')
+            return
+        }
+        console.log(typeof returnBase)
         var returnText = text.value
         var typeOption = retornaOpcao(option)
         // var returnText = element.value = text.value
@@ -54,7 +96,13 @@ function pegaTexto(text, element, option, base) {
                  codificador(returnText, element)
             }
             else {
-                return console.log(returnText + '' + typeOption)
+            // else {
+            //     do {
+            //         alert('por favor digite uma base diferente de vazia')
+            //         break
+            //     }
+            //     while(returnBase === '')
+                cifrador(returnText, returnBase, element)
             }
 
         
@@ -63,8 +111,8 @@ function pegaTexto(text, element, option, base) {
 
 
     })
-}
 
+}
 
 
 pegaTexto(input, output, radio, base)
