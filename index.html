@@ -12,6 +12,18 @@
     <section>
         <section class="radioSection">
             <div class="radioArea">
+                <label  for="">Codificar</label>
+                <input id="choiceCod" checked value="cod"  name="choice" type="radio"></input>
+            </div>
+            <div class="radioArea">
+                <label for="" >Decodificar</label>
+                <input id="choiceDecod" value="decod" name="choice" type="radio"></input>
+            </div>
+        </section>
+    </section>
+    <section>
+        <section class="radioSection">
+            <div class="radioArea">
                 <label  for="">Cifra de César</label>
                 <input id="tipo" checked value="Cifra de César" name="tipo" type="radio"></input>
                 <input id="base" type="number">
@@ -26,6 +38,7 @@
                 <label for="">Digite o Texto aqui</label>
                 <input value="" id="inputText" type="text">
                 <button id="cript" >Criptografar</button>
+                <button id="decript" >Decriptografar</button>
             </div>
             <div class="inputArea">
                 <label for="">Aqui está seu texto criptografado</label>

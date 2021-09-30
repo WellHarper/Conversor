@@ -1,8 +1,20 @@
-var button = document.getElementById('cript')
+var buttonCript = document.getElementById('cript')
+var buttonDeCript =  document.getElementById('decript')
 var input = document.getElementById('inputText')
 var output = document.getElementById('outputText')
 var radio = Array.from(document.getElementsByName('tipo'))
 var base = document.getElementById('base')
+var choiceCod = document.getElementById('choiceCod')
+var choiceDecod = document.getElementById('choiceDecod')
+
+choiceCod.addEventListener('click', () => {
+    buttonDeCript.style.display = 'none'
+    buttonCript.style.display = 'block'
+})
+choiceDecod.addEventListener('click', () => {
+    buttonCript.style.display = 'none'
+    buttonDeCript.style.display = 'block'
+})
 
 
 // Base64
@@ -10,6 +22,13 @@ function codificador(mensagem, element){
     var mensagemCodificada = btoa(mensagem)
     
     return element.value = mensagemCodificada
+
+}
+
+function decodificador(mensagem, element) {
+    let mensagemCodificada = atob(mensagem)
+
+    return element.value = 'cu'
 
 }
 
@@ -78,10 +97,11 @@ function retornaOpcao(option) {
 }
 
 
-function pegaTexto(text, element, option, base) {
+
+function cripta(text, element, option, base) {
 
 
-    button.addEventListener('click', () => {
+    buttonCript.addEventListener('click', () => {
 
         var returnBase = base.value
         if(returnBase === '' && typeOption === 'Cifra de César' ) {
@@ -115,4 +135,4 @@ function pegaTexto(text, element, option, base) {
 }
 
 
-pegaTexto(input, output, radio, base)
+cripta(input, output, radio, base)

@@ -22,3 +22,7 @@
 #base{
     width: 50px;
 }
+
+#decript {
+    display: none;
+}
