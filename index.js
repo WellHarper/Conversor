@@ -7,14 +7,6 @@ var base = document.getElementById('base')
 var choiceCod = document.getElementById('choiceCod')
 var choiceDecod = document.getElementById('choiceDecod')
 
-choiceCod.addEventListener('click', () => {
-    buttonDeCript.style.display = 'none'
-    buttonCript.style.display = 'block'
-})
-choiceDecod.addEventListener('click', () => {
-    buttonCript.style.display = 'none'
-    buttonDeCript.style.display = 'block'
-})
 
 
 // Base64
